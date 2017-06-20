@@ -10,6 +10,7 @@
     "syntax-trailing-function-commas",
     "transform-inline-environment-variables",
     "transform-es2015-modules-commonjs",
+    "add-module-exports",
     [
       "transform-runtime", {
         "regenerator": true

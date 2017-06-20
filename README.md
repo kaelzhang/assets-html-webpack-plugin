@@ -14,19 +14,40 @@
 
 # html-assets-webpack-plugin
 
-<!-- description -->
+Handle JavaScript or CSS assets to the HTML, woking with html-webpack-plugin
 
 ## Install
 
 ```sh
-$ npm install html-assets-webpack-plugin --save
+$ npm install html-assets-webpack-plugin --save-dev
 ```
 
 ## Usage
 
 ```js
-const html_assets_webpack_plugin = require('html-assets-webpack-plugin')
+// html-webpack-plugin@^2.10.0 is required
+const HtmlPlugin = require('html-webpack-plugin')
+const AssetsPlugin = require('html-assets-webpack-plugin')
+const webpackConfig = {
+  ...,
+  plugins: [
+    new HtmlPlugin(),
+    new AssetsPlugin({
+      filepath: require.resolve('./path/to/foo')
+    })
+  ]
+}
 ```
+
+## new AssetsPlugin(assets)
+## new AssetsPlugin(asset)
+
+- **assets** `Array.<Asset>`
+- **asset** `Asset`
+
+## Asset `Object`
+
+- **filepath** ``
 
 ## License
 
