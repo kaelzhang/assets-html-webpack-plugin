@@ -29,21 +29,47 @@ $ npm install html-assets-webpack-plugin --save-dev
 const HtmlPlugin = require('html-webpack-plugin')
 const AssetsPlugin = require('html-assets-webpack-plugin')
 const webpackConfig = {
-  ...,
+  output: {
+    path: '/path/to',
+    ...
+  },
   plugins: [
-    new HtmlPlugin(),
+    new HtmlPlugin(...),
     new AssetsPlugin({
-      filepath: require.resolve('./path/to/foo')
+      // Suppose the filepath is '/src/foo.js'
+      assets: [require.resolve('./path/to/foo')],
+      output: {
+        filename: 's/[name].[chunkhash].js',
+        publicPath: '//mycdn.com/m'
+      }
     })
   ]
 }
 ```
 
-## new AssetsPlugin(assets)
-## new AssetsPlugin(asset)
+Then, `/src/foo.js` will be copied to
 
-- **assets** `Array.<Asset>`
-- **asset** `Asset`
+```
+/path/to/s/
+          |-- foo.26313ef12faa88b00420.js
+```
+
+And the following script tag will be injected into the html:
+
+```html
+<script type=text/javascript src=//mycdn.com/m/s/foo.26313ef12faa88b00420.js></script>
+```
+
+## new AssetsPlugin(options)
+
+**options** `Object`
+
+- **assets** `Array.<Asset|Path>`
+- **chunks** what's coming...
+- **output.filename** `String`
+- **output.publicPath** `String`
+- **append** `Boolean=false` whether the asset will be append to the end of the existing assets
+- **typeOfAsset** `String.<js|css>=` Optional. Specify the type of the asset. By default, `AssetPlugin` will detect the type by the extname of the filepath.
 
 ## Asset `Object`
 

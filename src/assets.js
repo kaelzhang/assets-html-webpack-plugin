@@ -3,8 +3,9 @@ import path from 'path'
 import mapSeries from 'p-map-series'
 import presuf from 'pre-suf'
 
-const SLICE_HASH = '[hash]'
+const SLICE_HASH = '[chunkhash]'
 const SLICE_NAME = '[name]'
+const SLICE_EXT = '[ext]'
 const hasHash = name => !!~name.indexOf(SLICE_HASH)
 
 
@@ -16,7 +17,6 @@ async function addOne (
   {
     filepath,
     output: {
-      // path: outputPath,
       filename: outputFilename,
       publicPath
     },
@@ -34,12 +34,6 @@ async function addOne (
 
 ) {
 
-  if (!filepath) {
-    const error = new Error('No filepath defined')
-    compilation.error.push(error)
-    return Promise.reject(error)
-  }
-
   const unresolved = await htmlPlugin.addFileToAssets(filepath, compilation)
 
   if (hasHash(outputFilename)) {
@@ -56,6 +50,7 @@ async function addOne (
   // [name].abcd.js -> foo-abcd.js
   outputFilename = presuf.removeLeading(outputFilename, '/')
   .replace(SLICE_NAME, path.basename(unresolved, ext))
+  .replace(SLICE_EXT, typeOfAsset)
 
   const webpackAssets = compilation.assets
   webpackAssets[outputFilename] =
@@ -69,6 +64,5 @@ async function addOne (
   publicPath = presuf.removeEnding(publicPath, '/')
   const outputAssetURL = `${publicPath}/${outputFilename}`
 
-  console.log('outputAssetURL', outputAssetURL)
-  htmlAssets[typeOfAsset][appendMethod](outputFilename)
+  htmlAssets[typeOfAsset][appendMethod](outputAssetURL)
 }
