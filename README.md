@@ -57,7 +57,9 @@ Then, `/src/foo.js` will be copied to
 And the following script tag will be injected into the html:
 
 ```html
-<script type=text/javascript src=//mycdn.com/m/s/foo.26313ef12faa88b00420.js></script>
+<script
+  type=text/javascript
+  src=//mycdn.com/m/s/foo.26313ef12faa88b00420.js></script>
 ```
 
 ## new AssetsPlugin(options)

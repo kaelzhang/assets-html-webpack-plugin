@@ -59,7 +59,8 @@ export default class AssetsHtmlPlugin {
       }
 
       if (!asset.typeOfAsset) {
-        asset.typeOfAsset = path.extname(asset.filepath).slice(1) || 'js'
+        asset.typeOfAsset = path.extname(asset.filepath).slice(1)
+        || 'js'
       }
 
       return asset
