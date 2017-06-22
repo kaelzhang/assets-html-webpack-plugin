@@ -37,14 +37,16 @@ export default class AssetsHtmlPlugin {
       chunks = [],
       output: {
         filename,
-        publicPath = ''
+        publicPath
       } = {},
       append: isAppend = false,
       typeOfAsset
 
     }) => {
 
-      filename = filename || compilation.outputOptions.filename || DEFAULT_FILENAME
+      const baseOutputOptions = compilation.outputOptions
+      filename = filename || baseOutputOptions.filename || DEFAULT_FILENAME
+      publicPath = publicPath || baseOutputOptions.publicPath || ''
 
       const group = isAppend
         ? append

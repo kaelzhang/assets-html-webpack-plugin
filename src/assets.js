@@ -124,7 +124,7 @@ class Adder {
     return template
     .replace(SLICE_CHUNKHASH, chunkhash)
     .replace(SLICE_NAME, name)
-    .replace(ext, ext)
+    .replace(SLICE_EXT, ext)
   }
 
   async _addChunk ({
