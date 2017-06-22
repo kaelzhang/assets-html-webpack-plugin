@@ -38,6 +38,7 @@ const webpackConfig = {
     new AssetsPlugin({
       // Suppose the filepath is '/src/foo.js'
       assets: [require.resolve('./path/to/foo')],
+      chunks: ['vendor'],
       output: {
         filename: 's/[name].[chunkhash].js',
         publicPath: '//mycdn.com/m'
@@ -54,20 +55,28 @@ Then, `/src/foo.js` will be copied to
           |-- foo.26313ef12faa88b00420.js
 ```
 
-And the following script tag will be injected into the html:
+And the following script tags will be injected into the html:
 
 ```html
+<script
+  type=text/javascript
+  src=//mycdn.com/m/s/vendor.c0624bf9273d8c3b40a8.js></script>
 <script
   type=text/javascript
   src=//mycdn.com/m/s/foo.26313ef12faa88b00420.js></script>
 ```
 
-## new AssetsPlugin(options)
+Notice that `assets` scripts will come first, then `chunks`.
+
+## new AssetsPlugin(options [, options, ...])
 
 **options** `Object`
 
 - **assets** `Array.<Asset|Path>`
-- **chunks** what's coming...
+- **chunks** `Array.<String>`
+
+If both `assets` and `chunks` are empty or not defined, an error will throw.   
+
 - **output.filename** `String`
 - **output.publicPath** `String`
 - **append** `Boolean=false` whether the asset will be append to the end of the existing assets

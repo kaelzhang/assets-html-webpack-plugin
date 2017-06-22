@@ -1,6 +1,6 @@
 {
   "name": "html-assets-webpack-plugin",
-  "version": "1.0.1",
+  "version": "1.1.0",
   "description": "Handle JavaScript or CSS assets to the HTML, woking with html-webpack-plugin",
   "main": "lib/index.js",
   "scripts": {
@@ -54,9 +54,10 @@
     "babel-register": "^6.24.1"
   },
   "dependencies": {
+    "array-find-index": "^1.0.2",
     "babel-runtime": "^6.23.0",
     "make-array": "^1.0.2",
-    "p-map-series": "^1.0.0",
+    "p-props": "^1.0.0",
     "pre-suf": "^1.0.4"
   }
 }
