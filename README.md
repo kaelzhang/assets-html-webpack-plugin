@@ -77,14 +77,11 @@ Notice that `assets` scripts will come first, then `chunks`.
 
 If both `assets` and `chunks` are empty or not defined, an error will throw.   
 
-- **output.filename** `String`
-- **output.publicPath** `String`
-- **append** `Boolean=false` whether the asset will be append to the end of the existing assets
-- **typeOfAsset** `String.<js|css>=` Optional. Specify the type of the asset. By default, `AssetPlugin` will detect the type by the extname of the filepath.
+- **output.filename** `String` default to `webpack.config.output.filename`. Which will not affect `chunks`.
+- **output.publicPath** `String` default to `webpack.config.output.publicPath`
+- **append** `Boolean=false` whether the assets will be append to the end of the existing assets
+- **typeOfAsset** `String.<js|css>=` Optional. Specify the type of the asset. By default, `AssetPlugin` will detect the extname of the filepath.
 
-## Asset `Object`
-
-- **filepath** ``
 
 ## License
 
