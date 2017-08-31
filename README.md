@@ -14,7 +14,10 @@
 
 # html-assets-webpack-plugin
 
-Handle JavaScript or CSS assets to the HTML, woking with html-webpack-plugin
+Handle JavaScript or CSS assets to the HTML, woking with [html-webpack-plugin](https://www.npmjs.com/package/html-webpack-plugin)
+
+- Supports to add vendors to html pages.
+- Fallback to global output configuration of webpack.
 
 ## Install
 

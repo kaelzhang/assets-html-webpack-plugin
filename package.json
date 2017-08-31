@@ -1,6 +1,6 @@
 {
   "name": "html-assets-webpack-plugin",
-  "version": "1.2.1",
+  "version": "1.2.2",
   "description": "Handle JavaScript or CSS assets to the HTML, woking with html-webpack-plugin",
   "main": "lib/index.js",
   "scripts": {
@@ -16,6 +16,7 @@
     "url": "git://github.com/kaelzhang/html-assets-webpack-plugin.git"
   },
   "keywords": [
+    "html-webpack-plugin",
     "html-assets-webpack-plugin",
     "webpack-plugin",
     "webpack",
