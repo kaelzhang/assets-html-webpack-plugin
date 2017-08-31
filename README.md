@@ -1,18 +1,18 @@
-[![Build Status](https://travis-ci.org/kaelzhang/html-assets-webpack-plugin.svg?branch=master)](https://travis-ci.org/kaelzhang/html-assets-webpack-plugin)
+[![Build Status](https://travis-ci.org/kaelzhang/assets-html-webpack-plugin.svg?branch=master)](https://travis-ci.org/kaelzhang/assets-html-webpack-plugin)
 <!-- optional appveyor tst
-[![Windows Build Status](https://ci.appveyor.com/api/projects/status/github/kaelzhang/html-assets-webpack-plugin?branch=master&svg=true)](https://ci.appveyor.com/project/kaelzhang/html-assets-webpack-plugin)
+[![Windows Build Status](https://ci.appveyor.com/api/projects/status/github/kaelzhang/assets-html-webpack-plugin?branch=master&svg=true)](https://ci.appveyor.com/project/kaelzhang/assets-html-webpack-plugin)
 -->
 <!-- optional npm version
-[![NPM version](https://badge.fury.io/js/html-assets-webpack-plugin.svg)](http://badge.fury.io/js/html-assets-webpack-plugin)
+[![NPM version](https://badge.fury.io/js/assets-html-webpack-plugin.svg)](http://badge.fury.io/js/assets-html-webpack-plugin)
 -->
 <!-- optional npm downloads
-[![npm module downloads per month](http://img.shields.io/npm/dm/html-assets-webpack-plugin.svg)](https://www.npmjs.org/package/html-assets-webpack-plugin)
+[![npm module downloads per month](http://img.shields.io/npm/dm/assets-html-webpack-plugin.svg)](https://www.npmjs.org/package/assets-html-webpack-plugin)
 -->
 <!-- optional dependency status
-[![Dependency Status](https://david-dm.org/kaelzhang/html-assets-webpack-plugin.svg)](https://david-dm.org/kaelzhang/html-assets-webpack-plugin)
+[![Dependency Status](https://david-dm.org/kaelzhang/assets-html-webpack-plugin.svg)](https://david-dm.org/kaelzhang/assets-html-webpack-plugin)
 -->
 
-# html-assets-webpack-plugin
+# assets-html-webpack-plugin
 
 Handle JavaScript or CSS assets to the HTML, woking with [html-webpack-plugin](https://www.npmjs.com/package/html-webpack-plugin)
 
@@ -22,7 +22,7 @@ Handle JavaScript or CSS assets to the HTML, woking with [html-webpack-plugin](h
 ## Install
 
 ```sh
-$ npm install html-assets-webpack-plugin --save-dev
+$ npm install assets-html-webpack-plugin --save-dev
 ```
 
 ## Usage
@@ -30,7 +30,7 @@ $ npm install html-assets-webpack-plugin --save-dev
 ```js
 // html-webpack-plugin@^2.10.0 is required
 const HtmlPlugin = require('html-webpack-plugin')
-const AssetsPlugin = require('html-assets-webpack-plugin')
+const AssetsPlugin = require('assets-html-webpack-plugin')
 const webpackConfig = {
   output: {
     path: '/path/to',

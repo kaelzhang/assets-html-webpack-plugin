@@ -1,5 +1,5 @@
 {
-  "name": "html-assets-webpack-plugin",
+  "name": "assets-html-webpack-plugin",
   "version": "1.2.2",
   "description": "Handle JavaScript or CSS assets to the HTML, woking with html-webpack-plugin",
   "main": "lib/index.js",
@@ -13,11 +13,11 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git://github.com/kaelzhang/html-assets-webpack-plugin.git"
+    "url": "git://github.com/kaelzhang/assets-html-webpack-plugin.git"
   },
   "keywords": [
     "html-webpack-plugin",
-    "html-assets-webpack-plugin",
+    "assets-html-webpack-plugin",
     "webpack-plugin",
     "webpack",
     "assets",
@@ -29,7 +29,7 @@
   "author": "kaelzhang",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/kaelzhang/html-assets-webpack-plugin/issues"
+    "url": "https://github.com/kaelzhang/assets-html-webpack-plugin/issues"
   },
   "ava": {
     "require": "babel-register",
